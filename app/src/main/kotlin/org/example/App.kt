@@ -2,7 +2,7 @@ package org.example
 
 //etapa 1 
 
-fun main() {
+fun pcoeficientes() {
     val a = 6
     val b = 3
     val c = 2
@@ -18,7 +18,7 @@ fun main() {
 
 //etapa 2
 
-fun main() {
+fun Tabla() {
     // Coeficientes de la función cuadrática f(x) = ax² + bx + c
     val a = 2.0
     val b = -3.0
@@ -56,4 +56,9 @@ fun generarTablaDeValoresFormateada(a: Double, b: Double, c: Double, inicio: Int
     }
     
     println("└───────┴───────────┘")
+}
+
+fun main(){
+    Tabla()
+    pcoeficientes()
 }
