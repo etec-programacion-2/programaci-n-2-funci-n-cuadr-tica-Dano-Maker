@@ -2,6 +2,8 @@ package org.example
 
 //etapa 1 
 
+// funcion if que identifica que la funcion ingresada sea una función lineal o una función cuadratica
+
 fun pcoeficientes() {
     val a = 6
     val b = 3
@@ -17,6 +19,8 @@ fun pcoeficientes() {
 }
 
 //etapa 2
+
+//etapa de codigo en donde genera una tabla de valores de la funcion cuadratica y la printea por consola
 
 fun Tabla() {
     // Coeficientes de la función cuadrática f(x) = ax² + bx + c
@@ -59,6 +63,8 @@ fun generarTablaDeValoresFormateada(a: Double, b: Double, c: Double, inicio: Int
 }
 
 //etapa 3
+
+//Etapa de codigo donde se calculan las raices y la discriminante de la función cuadratica
 
 fun valores_de_raiz(): Triple<Double, Double, Double> {
     // Valores para la ecuación ax² + bx + c
