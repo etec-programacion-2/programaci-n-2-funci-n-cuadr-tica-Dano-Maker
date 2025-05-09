@@ -58,7 +58,58 @@ fun generarTablaDeValoresFormateada(a: Double, b: Double, c: Double, inicio: Int
     println("└───────┴───────────┘")
 }
 
-fun main(){
+//etapa 3
+
+fun valores_de_raiz(): Triple<Double, Double, Double> {
+    // Valores para la ecuación ax² + bx + c
+    val a = 1.0
+    val b = -5.0
+    val c = 6.0
+    
+    println("Calculando raíces para: ${a}x² + ${b}x + ${c}")
+    
+    // Devolver los valores para que puedan ser usados en otras funciones
+    return Triple(a, b, c)
+}
+
+// Función para calcular el discriminante (b² - 4ac)
+fun calcularDiscriminante(a: Double, b: Double, c: Double): Double {
+    return b * b - 4 * a * c
+}
+
+// Función para calcular y mostrar las raíces según el valor del discriminante
+fun calcularYMostrarRaices(a: Double, b: Double, discriminante: Double) {
+    when {
+        discriminante > 0 -> {
+            // Dos raíces diferentes
+            val x1 = (-b + Math.sqrt(discriminante)) / (2 * a)
+            val x2 = (-b - Math.sqrt(discriminante)) / (2 * a)
+            println("Dos raíces reales:")
+            println("x1 = %.2f".format(x1))
+            println("x2 = %.2f".format(x2))
+        }
+        discriminante == 0.0 -> {
+            // Una raíz doble
+            val x = -b / (2 * a)
+            println("Una raíz doble:")
+            println("x = %.2f".format(x))
+        }
+        else -> {
+            // Raíces complejas
+            val parteReal = -b / (2 * a)
+            val parteImaginaria = Math.sqrt(-discriminante) / (2 * a)
+            println("Raíces complejas:")
+            println("x1 = %.2f + %.2fi".format(parteReal, parteImaginaria))
+            println("x2 = %.2f - %.2fi".format(parteReal, parteImaginaria))
+        }
+    }
+}
+
+fun main() {
+    val (a, b, c) = valores_de_raiz()
+    val discriminante = calcularDiscriminante(a, b, c)
+    println("Discriminante: %.2f".format(discriminante))
+    calcularYMostrarRaices(a, b, discriminante)
     Tabla()
     pcoeficientes()
 }
